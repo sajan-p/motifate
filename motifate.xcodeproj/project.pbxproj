@@ -16,6 +16,8 @@
 		8F7A3DC32894AAFD00CA3BE2 /* CustomNavBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DC22894AAFD00CA3BE2 /* CustomNavBarContainerView.swift */; };
 		8F7A3DC52894AB1100CA3BE2 /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DC42894AB1100CA3BE2 /* CustomNavLink.swift */; };
 		8F7A3DC72894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DC62894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift */; };
+		8F7A3DCA2894AE3C00CA3BE2 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DC92894AE3C00CA3BE2 /* TodoView.swift */; };
+		8F7A3DCC2894AE8A00CA3BE2 /* TodoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DCB2894AE8A00CA3BE2 /* TodoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		8F7A3DC22894AAFD00CA3BE2 /* CustomNavBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarContainerView.swift; sourceTree = "<group>"; };
 		8F7A3DC42894AB1100CA3BE2 /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
 		8F7A3DC62894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
+		8F7A3DC92894AE3C00CA3BE2 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		8F7A3DCB2894AE8A00CA3BE2 /* TodoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +65,8 @@
 		8F7A3DAE2894A76D00CA3BE2 /* motifate */ = {
 			isa = PBXGroup;
 			children = (
-				8F7A3DBD2894AAA100CA3BE2 /* Navigation */,
+				8F7A3DC82894AE1E00CA3BE2 /* TodoManager */,
+				8F7A3DBD2894AAA100CA3BE2 /* NavigationManager */,
 				8F7A3DAF2894A76D00CA3BE2 /* motifateApp.swift */,
 				8F7A3DB12894A76D00CA3BE2 /* ContentView.swift */,
 				8F7A3DB32894A76F00CA3BE2 /* Assets.xcassets */,
@@ -78,7 +83,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		8F7A3DBD2894AAA100CA3BE2 /* Navigation */ = {
+		8F7A3DBD2894AAA100CA3BE2 /* NavigationManager */ = {
 			isa = PBXGroup;
 			children = (
 				8F7A3DBE2894AAB900CA3BE2 /* CustomNavBarView.swift */,
@@ -87,7 +92,16 @@
 				8F7A3DC42894AB1100CA3BE2 /* CustomNavLink.swift */,
 				8F7A3DC62894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift */,
 			);
-			path = Navigation;
+			path = NavigationManager;
+			sourceTree = "<group>";
+		};
+		8F7A3DC82894AE1E00CA3BE2 /* TodoManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F7A3DC92894AE3C00CA3BE2 /* TodoView.swift */,
+				8F7A3DCB2894AE8A00CA3BE2 /* TodoData.swift */,
+			);
+			path = TodoManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +176,8 @@
 			files = (
 				8F7A3DBF2894AAB900CA3BE2 /* CustomNavBarView.swift in Sources */,
 				8F7A3DC32894AAFD00CA3BE2 /* CustomNavBarContainerView.swift in Sources */,
+				8F7A3DCC2894AE8A00CA3BE2 /* TodoData.swift in Sources */,
+				8F7A3DCA2894AE3C00CA3BE2 /* TodoView.swift in Sources */,
 				8F7A3DC12894AADC00CA3BE2 /* CustomNavView.swift in Sources */,
 				8F7A3DB22894A76D00CA3BE2 /* ContentView.swift in Sources */,
 				8F7A3DC52894AB1100CA3BE2 /* CustomNavLink.swift in Sources */,

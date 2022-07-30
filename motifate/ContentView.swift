@@ -46,9 +46,9 @@ struct ContentView: View {
                             }
                             
                             CustomNavLink(destination:
-                                            Text("To-Do view goes here")
+                                            Todo()
                                 .customNavigationTitle("To-Do")
-                                .customNavigationSubtitle("To-Do Informationg goes here")
+                                .customNavigationSubtitle("Manage your life by easily creating and deleting tasks")
                             
                             ) {
                                 iconButton(icon: "doc.on.clipboard.fill", name: "To-Do")
