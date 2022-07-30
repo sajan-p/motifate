@@ -28,7 +28,7 @@ struct ContentView: View {
                             CustomNavLink(destination:
                                             PomodoroView()
                                 .customNavigationTitle("Pomodoro")
-                                .customNavigationSubtitle("Pomodoro information goes here")
+                                .customNavigationSubtitle("Manage your time by setting custom timers")
                             
                             ) {
                                 iconButton(icon: "timer", name: "Pomodoro")
