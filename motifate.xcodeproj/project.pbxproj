@@ -18,6 +18,7 @@
 		8F7A3DC72894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DC62894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift */; };
 		8F7A3DCA2894AE3C00CA3BE2 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DC92894AE3C00CA3BE2 /* TodoView.swift */; };
 		8F7A3DCC2894AE8A00CA3BE2 /* TodoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DCB2894AE8A00CA3BE2 /* TodoData.swift */; };
+		8F7A3DCF2894AF7D00CA3BE2 /* PomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7A3DCE2894AF7D00CA3BE2 /* PomodoroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		8F7A3DC62894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
 		8F7A3DC92894AE3C00CA3BE2 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		8F7A3DCB2894AE8A00CA3BE2 /* TodoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoData.swift; sourceTree = "<group>"; };
+		8F7A3DCE2894AF7D00CA3BE2 /* PomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		8F7A3DAE2894A76D00CA3BE2 /* motifate */ = {
 			isa = PBXGroup;
 			children = (
+				8F7A3DCD2894AF2000CA3BE2 /* PomodoroManager */,
 				8F7A3DC82894AE1E00CA3BE2 /* TodoManager */,
 				8F7A3DBD2894AAA100CA3BE2 /* NavigationManager */,
 				8F7A3DAF2894A76D00CA3BE2 /* motifateApp.swift */,
@@ -102,6 +105,14 @@
 				8F7A3DCB2894AE8A00CA3BE2 /* TodoData.swift */,
 			);
 			path = TodoManager;
+			sourceTree = "<group>";
+		};
+		8F7A3DCD2894AF2000CA3BE2 /* PomodoroManager */ = {
+			isa = PBXGroup;
+			children = (
+				8F7A3DCE2894AF7D00CA3BE2 /* PomodoroView.swift */,
+			);
+			path = PomodoroManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 				8F7A3DCC2894AE8A00CA3BE2 /* TodoData.swift in Sources */,
 				8F7A3DCA2894AE3C00CA3BE2 /* TodoView.swift in Sources */,
 				8F7A3DC12894AADC00CA3BE2 /* CustomNavView.swift in Sources */,
+				8F7A3DCF2894AF7D00CA3BE2 /* PomodoroView.swift in Sources */,
 				8F7A3DB22894A76D00CA3BE2 /* ContentView.swift in Sources */,
 				8F7A3DC52894AB1100CA3BE2 /* CustomNavLink.swift in Sources */,
 				8F7A3DC72894AB3000CA3BE2 /* CustomNavBarPreferenceKeys.swift in Sources */,

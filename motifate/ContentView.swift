@@ -26,7 +26,7 @@ struct ContentView: View {
                             }
                             
                             CustomNavLink(destination:
-                                            Text("Pomodoro view goes here")
+                                            PomodoroView()
                                 .customNavigationTitle("Pomodoro")
                                 .customNavigationSubtitle("Pomodoro information goes here")
                             
