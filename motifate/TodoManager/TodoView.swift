@@ -30,7 +30,11 @@ struct Todo: View {
     
     func addNewToDo() {
         if self.newToDo.count > 0 {
-            taskStore.tasks.append(Task(id: String(taskStore.tasks.count + 1), toDoItem: newToDo))
+            taskStore.tasks.append(Task(id: String(taskStore.tasks.count + 1), toDoItem: newToDo, toDoDueDate: newDate))
+            taskStore.tasks = taskStore.tasks.sorted(by: { lhs, rhs in
+                lhs.toDoDueDate < rhs.toDoDueDate
+            })
+            
             self.newToDo = ""
         }
     }
@@ -47,6 +51,7 @@ struct Todo: View {
                         VStack (alignment: .leading) {
                             Text(task.toDoItem)
                                 .font(.system(size: 20))
+                                
                             Text("\(task.toDoDueDate.formatted())")
                                 .font(.system(size: 15))
                         }

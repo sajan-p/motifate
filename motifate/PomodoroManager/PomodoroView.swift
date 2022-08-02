@@ -1,4 +1,7 @@
 import SwiftUI
+import AVFoundation
+
+var player: AVAudioPlayer!
 
 struct PomodoroView: View {
     
@@ -8,6 +11,7 @@ struct PomodoroView: View {
     @State var breakTime = 5
     @State var onWork = true
     @State var isPlaying = false
+    @State var isPaused = true
     
     @State var workHour = String()
     @State var workMinute = String()
@@ -61,8 +65,10 @@ struct PomodoroView: View {
                 
                 VStack (spacing: 30) {
                     HStack(spacing: 30) {
-                        functionButton(buttonImageName: isPlaying ? "pause.fill" : "play.fill", buttonFunction: isPlaying ? pauseButtonPressed : playButtonPressed)
-                        functionButton(buttonImageName: "stop.fill", buttonFunction: stopButtonPressed)
+                        functionButton(buttonImageName: !isPaused ? "pause.fill" : "play.fill", buttonFunction: !isPaused ? pauseButtonPressed : playButtonPressed)
+                        if isPlaying {
+                            functionButton(buttonImageName: "stop.fill", buttonFunction: stopButtonPressed)
+                        }
                     }
                     Image(systemName: onWork ? "book.closed.fill" : "gamecontroller.fill").resizable()                .aspectRatio(contentMode: .fit)
                         .frame(width: 150, height: 150)
@@ -110,7 +116,7 @@ struct PomodoroView: View {
     }
     
     func onRecieved() {
-        if isPlaying {
+        if isPlaying && !isPaused {
             if onWork && workTime > 0 {
                 workTime -= 1
                 
@@ -127,6 +133,7 @@ struct PomodoroView: View {
                 
                 breakDisplay = formatTime(hours: hour, minutes: minute, seconds: second)
                 
+                playEndSound()
                 onWork = false
                 
             }
@@ -145,6 +152,7 @@ struct PomodoroView: View {
                 
                 workDisplay = formatTime(hours: hour, minutes: minute, seconds: second)
                 
+                playEndSound()
                 onWork = true
             }
         }
@@ -152,20 +160,37 @@ struct PomodoroView: View {
     
     func playButtonPressed() {
         isPlaying = true
+        isPaused = false
     }
     
     func pauseButtonPressed() {
-        isPlaying = false
+        isPaused = true
     }
     
     func stopButtonPressed() {
         isPlaying = false
+        isPaused = true
         onWork = true
         workTime = TimeToSeconds(hours: workHour, minutes: workMinute, seconds: workSecond)
         let (hour, minute, second) = secondsToTime(seconds: workTime)
         
         workDisplay = formatTime(hours: hour, minutes: minute, seconds: second)
         breakTime = TimeToSeconds(hours: breakHour, minutes: breakMinute, seconds: bugBreakSecond)
+    }
+    
+    func playEndSound() {
+        let url = Bundle.main.url(forResource: "alarm", withExtension: ".mp3")
+        
+        guard url != nil else {
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            player?.play()
+        } catch {
+            print("error")
+        }
     }
     
 }
@@ -185,7 +210,8 @@ struct inputItem: View {
     var body: some View {
         TextField(text: trackedVar) {
             Text(placeholder)
-        }.background(Color(UIColor(named: "main-color-trans")!))
+        }
+            .background(Color(UIColor(named: "main-color-trans")!))
             .foregroundColor(.blue)
             .font(.system(size: 25, weight: .medium, design: .default))
     }

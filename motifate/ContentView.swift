@@ -1,6 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    var menuQuotes = MenuQuotes()
+    @State var randomQuote = String()
+    
     var body: some View {
         CustomNavView {
             ZStack {
@@ -50,8 +55,17 @@ struct ContentView: View {
                                 iconButton(icon: "doc.on.clipboard.fill", name: "To-Do")
                             }
                         }
-                    }.padding(.bottom, 80)
+                    }.padding(.bottom, 30)
                         .padding(.top, 40)
+                    
+                    Text(randomQuote)
+                        .onAppear() {
+                            randomQuote = menuQuotes.getRandomQuote()
+                        }
+                        .foregroundColor(.blue)
+                        .font(.system(size: 16, weight: .medium, design: .default))
+                        .frame(width: 400, height: 120, alignment: .center)
+                        .multilineTextAlignment(.center)
                 }
             }.customNavBarItems(title: "Good morning, Sajan!", subtitle: nil, backButtonHidden: true)
         }
