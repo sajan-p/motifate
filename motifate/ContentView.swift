@@ -17,19 +17,18 @@ struct ContentView: View {
                     HStack (spacing: 50) {
                         VStack (spacing: 50) {
                             CustomNavLink(destination:
-                                            Text("Resources view goes here")
-                                .customNavigationTitle("Resources")
-                                .customNavigationSubtitle("Resources information goes here")
-                            
+                                            Text("Resources not included in the MVP")
+                                .customNavBarItems(title: "Resources", subtitle: "Search for reliable resources and add your own to the mix")
+                                          
+                                          
                             ) {
                                 iconButton(icon: "desktopcomputer", name: "Resources")
                             }
                             
                             CustomNavLink(destination:
                                             PomodoroView()
-                                .customNavigationTitle("Pomodoro")
-                                .customNavigationSubtitle("Manage your time by setting custom timers")
-                            
+                                .customNavBarItems(title: "Pomodoro", subtitle: "Manage your time by setting custom timers")
+                                          
                             ) {
                                 iconButton(icon: "timer", name: "Pomodoro")
                             }
@@ -38,18 +37,15 @@ struct ContentView: View {
                         VStack (spacing: 50) {
                             CustomNavLink(destination:
                                             Text("Journal view goes here")
-                                .customNavigationTitle("Journal")
-                                .customNavigationSubtitle("Journal information goes here")
-                            
+                                .customNavBarItems(title: "Journal", subtitle: "Journal not inluded in the MVP")
                             ) {
-                                iconButton(icon: "book.closed.fill", name: "Journal")
+                                iconButton(icon: "book.fill", name: "Journal")
                             }
                             
                             CustomNavLink(destination:
                                             Todo()
-                                .customNavigationTitle("To-Do")
-                                .customNavigationSubtitle("Manage your life by easily creating and deleting tasks")
-                            
+                                .customNavBarItems(title: "To-Do", subtitle: "Manage your life by easily creating and deleting tasks")
+                                          
                             ) {
                                 iconButton(icon: "doc.on.clipboard.fill", name: "To-Do")
                             }

@@ -5,10 +5,14 @@ struct Todo: View {
     
     @ObservedObject var taskStore = TaskStore()
     @State var newToDo : String = ""
+    @State var newDate : Date = Date.now
     
     var inputText: some View {
         HStack {
-            TextField("Enter Task", text: self.$newToDo)
+            VStack {
+                TextField("Enter Task", text: self.$newToDo).font(.system(size: 30))
+                DatePicker("", selection: $newDate).padding(.trailing, 90)
+            }
             Button {
                 addNewToDo()
             } label: {
@@ -19,13 +23,12 @@ struct Todo: View {
                     .background(Color(UIColor(named: "main-color-trans")!))
                     .foregroundColor(.blue)
                     .cornerRadius(30)
-            }
+            }.padding(.trailing, 10)
         }
     }
     
     
     func addNewToDo() {
-        
         if self.newToDo.count > 0 {
             taskStore.tasks.append(Task(id: String(taskStore.tasks.count + 1), toDoItem: newToDo))
             self.newToDo = ""
@@ -40,8 +43,13 @@ struct Todo: View {
                 List {
                     ForEach(self.taskStore.tasks) {
                         task in
-                        Text(task.toDoItem)
                         
+                        VStack (alignment: .leading) {
+                            Text(task.toDoItem)
+                                .font(.system(size: 20))
+                            Text("\(task.toDoDueDate.formatted())")
+                                .font(.system(size: 15))
+                        }
                         
                     }.onMove(perform: self.move)
                         .onDelete(perform: self.delete)
