@@ -41,8 +41,8 @@ struct ContentView: View {
                         
                         VStack (spacing: 50) {
                             CustomNavLink(destination:
-                                            Text("Journal view goes here")
-                                .customNavBarItems(title: "Journal", subtitle: "Journal not inluded in the MVP")
+                                            Text("Journal not inluded in the MVP")
+                                .customNavBarItems(title: "Journal", subtitle: "Write about your day or write about the prompts below")
                             ) {
                                 iconButton(icon: "book.fill", name: "Journal")
                             }

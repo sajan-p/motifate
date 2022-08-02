@@ -1,5 +1,5 @@
+/// Quotes supplied by: https://motivators.in/staying-positive-quotes/
 import Foundation
-
 struct MenuQuotes {
     let menuQuotes = [
         "“All you need is the plan, the road map, and the courage to press on to your destination.” —Earl Nightingale",
@@ -13,7 +13,12 @@ struct MenuQuotes {
         "“If you can stay positive in a negative situation, you win.“ —Unknown",
         "“Only in the darkness can you see the stars.“ —Martin Luther King, Jr.",
         "“A goal is not always meant to be reached, it often serves simply as something to aim at.” – Bruce Lee",
-        "“Be yourself and people will like you.“ - Jeff Kinney"
+        "“Be yourself and people will like you.“ - Jeff Kinney",
+        "“Memories of our lives, of our works and our deeds will continue in others.” —Rosa Parks",
+        "“Make your life matter and have fun doing it.” —Aaron Hurst",
+        "“Choose to be optimistic, it feels better“ - Dalai Lama",
+        "“Think and wonder. Wonder and think.” —Dr. Suess"
+        
     ]
     
     func getRandomQuote() -> String {
