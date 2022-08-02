@@ -17,7 +17,8 @@ struct MenuQuotes {
         "“Memories of our lives, of our works and our deeds will continue in others.” —Rosa Parks",
         "“Make your life matter and have fun doing it.” —Aaron Hurst",
         "“Choose to be optimistic, it feels better“ - Dalai Lama",
-        "“Think and wonder. Wonder and think.” —Dr. Suess"
+        "“Think and wonder. Wonder and think.” —Dr. Suess",
+        "“No act of kindness, no matter how small, is ever wasted.” —Aesop (Staying Positive Quotes)"
         
     ]
     
